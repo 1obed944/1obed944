@@ -8,8 +8,8 @@ from random import choice
 from utils import opening_text
 
 
-USERNAME = config('USER')
-BOTNAME = config('BOTNAME')
+USERNAME = config('obed')
+BOTNAME = config('jarvis')
 
 
 engine = pyttsx3.init('sapi5')
@@ -20,7 +20,7 @@ engine.setProperty('rate', 190)
 # Set Volume
 engine.setProperty('volume', 1.0)
 
-# Set Voice (Female)
+# Set Voice (male)
 voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[1].id)
 
@@ -38,12 +38,12 @@ def greet_user():
 
     hour = datetime.now().hour
     if (hour >= 6) and (hour < 12):
-        speak(f"Good Morning {USERNAME}")
+        speak(f"Good Morning {obed}")
     elif (hour >= 12) and (hour < 16):
-        speak(f"Good afternoon {USERNAME}")
+        speak(f"Good afternoon {obed}")
     elif (hour >= 16) and (hour < 19):
-        speak(f"Good Evening {USERNAME}")
-    speak(f"I am {BOTNAME}. How may I assist you?")
+        speak(f"Good Evening {obed}")
+    speak(f"I am {Jarvis}. How may I assist you?")
 
 
 # Function to Take User Input
